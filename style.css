@@ -78,5 +78,13 @@ span {
     color: white;
     padding: 1em;
     border-radius: 10px;
-    border: 2px solid transparent;
+    border: 1px solid transparent #fff;
+}
+
+#output {
+    background-color: black;
+    color: white;
+    padding: 1em;
+    border-radius: 10px;
+    border: 1px solid transparent #fff;
 }

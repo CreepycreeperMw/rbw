@@ -15,6 +15,7 @@
 <body>
     <textarea name="rainbowtext" id="rbt" cols="60" rows="4" style="width: 430px; height: 79px;" placeholder="Your Rainbow Text here..."></textarea>
     <a href="#">Generate</a>
+    <textarea name="output" id="output" cols="35" rows="1" style="display: none;" ></textarea>
     <script type="text/javascript">
         function rainbowart(text) {
             let rbtext = text.split("");
@@ -66,7 +67,7 @@
                 setTimeout(()=>{
                     this.innerText="Generate"
                 }, 3000)
-                
+
                 let x = e.clientX - e.target.offsetLeft
                 let y = e.clientY - e.target.offsetTop
 
@@ -80,11 +81,13 @@
                 }, 1000)
 
                 let textarea = document.getElementById("rbt")
+                let output = document.getElementById("output")
 
-                textarea.value=rainbowart(textarea.value);
-                textarea.select()
+                output.value=rainbowart(textarea.value);
+                output.select()
                 document.execCommand("copy")
                 textarea.value="";
+                output.style.removeProperty("display")
             })
         })
         document.querySelector("script").remove();
