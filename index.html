@@ -17,6 +17,7 @@
     <a href="#">Generate</a>
     <textarea name="output" id="output" cols="35" rows="1" style="display: none;" ></textarea>
     <script type="text/javascript">
+        let restart = 0;
         function rainbowart(text) {
             let rbtext = text.split("");
             var rbTNSp = 0;
@@ -64,8 +65,10 @@
         buttons.forEach(btn=>{
             btn.addEventListener('click', function(e) {
                 this.innerText="Copied!"
+                restart=new Date().getTime();
+
                 setTimeout(()=>{
-                    this.innerText="Generate"
+                    if((new Date().getTime())-restart >= 1000) {this.innerText="Generate"}
                 }, 3000)
 
                 let x = e.clientX - e.target.offsetLeft
