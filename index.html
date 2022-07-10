@@ -85,12 +85,12 @@
 
                 let textarea = document.getElementById("rbt")
                 let output = document.getElementById("output")
+                output.style.removeProperty("display")
 
                 output.value=rainbowart(textarea.value);
                 output.select()
                 document.execCommand("copy")
                 textarea.value="";
-                output.style.removeProperty("display")
             })
         })
         document.querySelector("script").remove();
