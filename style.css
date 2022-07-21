@@ -80,6 +80,9 @@ span {
     border-radius: 10px;
     border: 1px solid transparent #fff;
 }
+#rbt::-webkit-scrollbar {
+    display: none;
+}
 
 #output {
     background-color: black;
@@ -87,4 +90,7 @@ span {
     padding: 1em;
     border-radius: 10px;
     border: 1px solid transparent #fff;
+}
+#output::-webkit-scrollbar {
+    display: none;
 }
