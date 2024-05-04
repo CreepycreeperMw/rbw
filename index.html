@@ -18,44 +18,22 @@
     <textarea name="output" id="output" cols="35" rows="1" style="display: none;" ></textarea>
     <script type="text/javascript">
         let restart = 0;
-        function rainbowart(text) {
+        const colors = "c6ea2315"
+        export function rainbowart(text) {
             let rbtext = text.split("");
-            var rbTNSp = 0;
+            let colorI = 0;
+            const colorAmount = colors.length;
 
-            for (let i = 0; i < rbtext.length; i++) {
-
-                let color = i+rbTNSp;
-
-                while(color > 7) {
-                    color=color-8;
+            for (let i = 0; i < rbtext.length; i+=2) {
+                if(rbtext[i]==" ") continue;
+                if(rbtext[i]=="§") {
+                    i++
+                    continue;
                 }
-                if(rbtext[i]==" "||rbtext[i]=="\n") {
-                    rbTNSp=rbTNSp-1
-                }
-                if(color==0) {
-                    rbtext[i]="§c"+rbtext[i];
-                }
-                if(color==1) {
-                    rbtext[i]="§6"+rbtext[i];
-                }
-                if(color==2) {
-                    rbtext[i]="§e"+rbtext[i];
-                }
-                if(color==3) {
-                    rbtext[i]="§a"+rbtext[i];
-                }
-                if(color==4) {
-                    rbtext[i]="§2"+rbtext[i];
-                }
-                if(color==5) {
-                    rbtext[i]="§3"+rbtext[i];
-                }
-                if(color==6) {
-                    rbtext[i]="§1"+rbtext[i];
-                }
-                if(color==7) {
-                    rbtext[i]="§5"+rbtext[i];
-                }
+                
+                rbtext[i] = "§" + colors[colorI] + rbtext[i];
+                colorI++;
+                if(colorI>=colorAmount) colorI=0;
             }
             return rbtext.join("")
         }
